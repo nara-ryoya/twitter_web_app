@@ -1,0 +1,32 @@
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='js/search.js') }}"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+{% extends "base.html" %}
+{% block content %}
+<header>
+    <div class="container">
+        <h1>素数判定くん</h1>
+        <a href="http://ec2-54-199-15-126.ap-northeast-1.compute.amazonaws.com:4231/" target="_blank"><img src="../static/img/dont_touch.jpg"></a>
+    </div>
+
+</header>
+<main>
+    <div class="container">
+        <p>自然数を入力してください</p>
+        <input type="text" name="num">
+        <a href="#" class="btn-sf-like" id="search">Search</a>
+        <p class="result_isprime" id="result_isprime">ここに結果が表示されます</p>
+    </div>
+</main>
+<footer>
+    <div class="container"> 
+        <a href="https://ja.wikipedia.org/wiki/%E3%83%AA%E3%83%B3"><h3>team　P</h3></a>
+    </div>
+</footer>
+{% endblock %}
