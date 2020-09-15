@@ -7,6 +7,8 @@ from flask import (
 
 
 from . import models
+from sklearn.linear_model import LogisticRegression
+
 
 app = Flask(__name__)
 
@@ -16,8 +18,8 @@ def index():
 
 @app.route('/_type_in_num')
 def type_in_num():
-    num = request.args.get('num', 0, type=int)
-    result = models.SentimentAnalysis.isprime(num)
+    tweet = request.args.get('num', 0, type=str)
+    result = models.SentimentAnalysis.predict(tweet)
     return jsonify({
         'result':result
     })
